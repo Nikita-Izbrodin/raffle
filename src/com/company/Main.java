@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-
-
 public class Main {
-
-
 
     public static void main(String[] args) throws IOException {
 
@@ -26,33 +22,25 @@ public class Main {
 
         switch (raffleOpt) {
 
-            case "c":
+            case "c" -> { // start of case "c"
                 System.out.println("What is your name? ");
                 userName = input.readLine();
 
-                do {
+                while (loop) {
                     try {
                         System.out.println("What is your 3-digit raffle ticket number? ");
-                        raffleNum = Integer.parseInt (input.readLine());
+                        raffleNum = Integer.parseInt(input.readLine());
                         loop = false;
-                        //break;
+                        System.out.println("The raffle you entered is " + userName + ":" + raffleNum);
                     } catch (Exception e) {
                         System.out.println("You did not enter a number.");
                     }
+                }
 
-                    System.out.println("What is your 3-digit raffle ticket number? ");
-                    raffleNum = Integer.parseInt (input.readLine());
+                // end of case "c"
+            }
 
-                    System.out.println("The raffle you entered is " + userName + ":" + raffleNum);
-
-                } while (loop);
-
-
-
-
-                break;
-
-            case "b":
+            case "b" -> { // start of case "b"
                 System.out.println("What is your name? ");
                 userName = input.readLine();
 
@@ -60,8 +48,8 @@ public class Main {
 
                 System.out.println("Your raffle is " + userName + ":" + raffleNum);
 
-                break;
+                // end of case "b"
+            }
         }
-
     }
 }
